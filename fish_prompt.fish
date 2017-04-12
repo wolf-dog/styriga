@@ -86,10 +86,10 @@ function __styriga_hostname
   end
 end
 
-function __styriga_pwd --argument-names user
+function __styriga_pwd
   set -l pwd (command pwd)
 
-  echo (__styriga_colorize (command echo $pwd | string replace "/home/$user" '~') $styriga_color_pwd)
+  echo (__styriga_colorize (command echo $pwd | string replace "$HOME" '~') $styriga_color_pwd)
 end
 
 function __styriga_prompt_char --argument-names user last_status
@@ -148,7 +148,7 @@ end
 function fish_prompt
   set -g __styriga_last_status $status
   set -l user (command whoami)
-  set -l left_prompt (__styriga_connection $user)(__styriga_pwd $user)
+  set -l left_prompt (__styriga_connection $user)(__styriga_pwd)
   set -l right_prompt (__styriga_pad_right (__styriga_right_prompt) $left_prompt)
 
   echo -e $left_prompt$right_prompt"\n"(__styriga_prompt_char $user $__styriga_last_status)
