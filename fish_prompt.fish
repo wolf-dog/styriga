@@ -76,13 +76,13 @@ function __styriga_user --argument-names user
 end
 
 function __styriga_hostname
-  set -l hostname (command hostname -s)
+  set -l prompt_hostname (command hostname -s)
 
-  if [ $hostname = $styriga_default_hostname ]
+  if [ $prompt_hostname = $styriga_default_hostname ]
     echo ''
     return
   else
-    echo (__styriga_colorize '@' $styriga_color_hostname_separator)(__styriga_colorize $hostname $styriga_color_hostname)
+    echo (__styriga_colorize '@' $styriga_color_hostname_separator)(__styriga_colorize $prompt_hostname $styriga_color_hostname)
   end
 end
 
