@@ -132,7 +132,7 @@ function __styriga_time --argument-names last_status
 end
 
 function __styriga_right_prompt
-   echo (__styriga_git_status)(__styriga_time $__styriga_last_status)
+  echo (__styriga_git_status)(__styriga_time $__styriga_last_status)
 end
 
 function __styriga_pad_right --argument-names right left
@@ -148,9 +148,9 @@ end
 function fish_prompt
   set -g __styriga_last_status $status
   set -l user (command whoami)
+
   set -l left_prompt (__styriga_connection $user)(__styriga_pwd)
   set -l right_prompt (__styriga_pad_right (__styriga_right_prompt) $left_prompt)
 
   echo -e $left_prompt$right_prompt"\n"(__styriga_prompt_char $user $__styriga_last_status)
 end
-
