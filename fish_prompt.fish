@@ -139,7 +139,13 @@ function __styriga_pad_right --argument-names right left
   set -l right_length (__styriga_strip_non_printable_chars $right | wc -c)
   set -l left_length (__styriga_strip_non_printable_chars $left | wc -c)
   set -l pad_length (math $COLUMNS - $left_length - $right_length + 2)
-  echo -n (printf '%-'$pad_length's%s' ' ' $right)
+
+  if [ $pad_length -gt 0 ]
+    echo -n (printf '%-'$pad_length's%s' ' ' $right)
+  else
+    set -l pad_length (math $COLUMNS - $right_length + 1)
+    echo -n "\n"(printf '%-'$pad_length's%s' ' ' $right)
+  end
 end
 
 #
