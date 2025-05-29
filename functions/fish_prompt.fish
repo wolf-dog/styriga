@@ -18,7 +18,7 @@ __styriga_set_default styriga_color_prompt_char_failed 'red'
 __styriga_set_default styriga_color_time 'brblack'
 __styriga_set_default styriga_color_time_failed 'red'
 
-# __fish_git_prompt settings
+# fish_git_prompt settings
 __styriga_set_default __fish_git_prompt_showupstream 'git'
 __styriga_set_default __fish_git_prompt_showdirtystate true
 __styriga_set_default __fish_git_prompt_showstashstate true
@@ -116,7 +116,7 @@ end
 # right prompt
 #
 function __styriga_git_status
-  echo (__fish_git_prompt '%s')
+  echo (fish_git_prompt '%s')
 end
 
 function __styriga_time --argument-names last_status

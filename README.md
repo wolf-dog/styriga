@@ -6,16 +6,10 @@
 
 ## Installation
 
-### [Fisherman](https://fisherman.github.io/)
+### [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
-$ fisher wolf-dog/styriga
-```
-
-### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
-
-```fish
-$ omf install wolf-dog/styriga
+$ fisher install wolf-dog/styriga
 ```
 
 ## Features
@@ -23,7 +17,7 @@ $ omf install wolf-dog/styriga
 - Top aligned right prompt
 - Hide username when you are logged in as the default user
 - Hide hostname when you are logged in to the default host
-- Displays Git status (via [__fish_git_prompt.fish](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_git_prompt.fish))
+- Displays Git status (via [fish_git_prompt.fish](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_git_prompt.fish))
 - Indicates that you are logged in as root
 - Warns when previous command failed
 - Displays current time
@@ -58,12 +52,12 @@ set -g styriga_color_time_failed 'red'
 
 ### Git status
 
-Styriga uses `__fish_git_prompt.fish` to display Git status.  
+Styriga uses `fish_git_prompt.fish` to display Git status.  
 So it can be customized as shown below.
 
 ```fish
-set -g __fish_git_prompt_showdirtystate false
-set -g ___fish_git_prompt_char_dirtystate '🍣'
+set -g fish_git_prompt_showdirtystate false
+set -g fish_git_prompt_char_dirtystate '🍣'
 ```
 
-For more details, see [__fish_git_prompt.fish](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_git_prompt.fish).
+For more details, see [fish_git_prompt.fish](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_git_prompt.fish).
